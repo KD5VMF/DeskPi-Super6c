@@ -1,0 +1,23 @@
+[Unit]
+Description=Cluster Bench (MPI) Live Loop
+After=network-online.target
+
+[Service]
+Type=simple
+# Adjust your environment here
+Environment="OUTDIR=%h/cluster_bench_out"
+Environment="SIZES=2048,3072,4096"
+Environment="REPS=2"
+Environment="DTYPE=float32"
+Environment="INTERVAL=5"
+Environment="LABEL=live"
+Environment="OMP_NUM_THREADS=4"
+Environment="OPENBLAS_NUM_THREADS=4"
+Environment="MKL_NUM_THREADS=4"
+WorkingDirectory=%h/cluster_bench_pack
+ExecStart=%h/cluster_bench_pack/cluster_bench_forever.sh
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=default.target

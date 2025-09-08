@@ -1,0 +1,8 @@
+# Example: one worker per line (PI5 is master; do NOT list PI5 here)
+# Use IPs or resolvable hostnames; comments and blanks allowed.
+192.168.0.191
+192.168.0.192
+192.168.0.193
+192.168.0.194
+192.168.0.195
+192.168.0.196
